@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "VoxSummary Live",
+  "version": "1.0.0",
+  "description": "Live meeting summaries with Whisper + Qwen.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "VoxSummary Live"
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["http://localhost:3000/*"]
+}

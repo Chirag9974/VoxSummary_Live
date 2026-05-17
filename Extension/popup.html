@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VoxSummary Live</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <p class="eyebrow">VoxSummary Live</p>
+        <h1>Live meeting summary</h1>
+        <p class="subtitle">Capture audio and stream it to your backend.</p>
+      </header>
+
+      <section class="controls">
+        <label>
+          Meeting title
+          <input id="meetingTitle" type="text" placeholder="Team sync" />
+        </label>
+        <div class="buttons">
+          <button id="startBtn" class="primary">Start</button>
+          <button id="stopBtn" class="ghost" disabled>Stop</button>
+        </div>
+        <p id="status" class="status">Idle</p>
+      </section>
+
+      <section class="upload-card">
+        <h2>Upload audio</h2>
+        <p class="subtitle">Upload a file instead of recording live.</p>
+        <input id="uploadInput" type="file" accept="audio/*" />
+        <div class="buttons">
+          <button id="uploadBtn" class="primary">Upload</button>
+          <button id="downloadTranscriptBtn" class="ghost" disabled>Download transcript</button>
+          <button id="downloadSummaryBtn" class="ghost" disabled>Download summary</button>
+        </div>
+        <p id="uploadStatus" class="status">No file selected.</p>
+      </section>
+
+      <section class="summary-card">
+        <h2>Summary</h2>
+        <p id="summaryTitle" class="summary-title">Waiting for audio...</p>
+        <ul id="summaryPoints" class="points"></ul>
+        <h3>Action items</h3>
+        <ul id="summaryActions" class="actions"></ul>
+      </section>
+
+      <section class="summary-card">
+        <h2>Live waveform</h2>
+        <canvas id="waveform" width="320" height="80"></canvas>
+      </section>
+
+      <section class="transcript-card">
+        <h2>Live transcript</h2>
+        <div id="transcript" class="transcript">No transcript yet.</div>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
